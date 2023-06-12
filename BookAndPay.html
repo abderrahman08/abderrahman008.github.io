@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Service Website</title>
+  <link rel="stylesheet" href="WebSite.css">
+  <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+              <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-4">VITALITY</span>
+              </a>
+        
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="Coaches.html" class="nav-link">Coaches</a></li>
+                <li class="nav-item"><a href="Programs.html" class="nav-link">Programs</a></li>
+                <li class="nav-item"><a href="BookAndPay.html" class="nav-link">Book Now</a></li>
+                
+              </ul>
+            </header>
+          </div>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="booking" id="booking">
+      <div class="container">
+        <h1>Booking and Payment</h1>
+        <form>
+          <div class="form-group">
+            <label for="coach">Choose a Coach:</label>
+            <select id="coach" name="coach">
+              <option value="coach1">Bob</option>
+              <option value="coach2">Kate</option>
+              <option value="coach3">Adam</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="day">Choose a Day:</label>
+            <select id="day" name="day">
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="hour">Choose an Hour:</label>
+            <select id="hour" name="hour">
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="16:00">04:00 PM</option>
+              <option value="17:00">05:00 PM</option>
+              <option value="18:00">06:00 PM</option>
+              <option value="19:00">07:00 PM</option>
+              <option value="20:00">08:00 PM</option>
+              <option value="21:00">09:00 PM</option>
+            </select>
+          </div>          
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <a class="btn btn-primary" href="#payment">Go to payment</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  
+    <section class="payment" id="payment">
+      <div class="container">
+        <h2>Payment Information</h2>
+        <form>
+          <div class="form-group">
+            <label for="card-number">Card Number:</label>
+            <input type="text" id="card-number" name="card-number">
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv">
+          </div>
+          <div class="form-group">
+            <label for="expiration-date">Expiration Date:</label>
+            <input type="text" id="expiration-date" name="expiration-date">
+          </div>
+          <div class="form-group">
+            <button type="submit" id="payButton" class="btn btn-success">Pay</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.getElementById('payButton').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the form submission
+  
+      var successMessageHTML = `
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          <p>Aww yeah, you successfully completed the payment!</p>
+          <hr>
+          <p class="mb-0">We are happy to have you as one of our customer.</p>
+        </div>
+      `;
+  
+      var successMessageContainer = document.createElement('div');
+      successMessageContainer.innerHTML = successMessageHTML;
+  
+      var paymentSection = document.getElementById('payment');
+      var parentContainer = paymentSection.parentNode;
+  
+      parentContainer.insertBefore(successMessageContainer, paymentSection.nextSibling);
+    });
+  </script>
+  
+  
+  
+    <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vitality@mail.com</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">from 9AM to 9PM</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">7j/7</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">64 rue Jeanne montreal </a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">+1 9517532486</a></li>
+      </ul>
+      <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <script src="BookAndPay.js"></script>
+</body>
+</html>
+<style>
+  /* Styles for the main container */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Styles for form labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  /* Styles for form inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="time"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #06f3f3;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for form select */
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  /* Styles for form submit button */
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Styles for section headings */
+  h1, h2 {
+    margin-top: 20px;
+  }
+
+  /* Styles for section spacing */
+  section {
+    margin-bottom: 40px;
+  }
+</style>
+
